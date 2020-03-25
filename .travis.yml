@@ -2,7 +2,7 @@ language: java
 
 addons:
   sonarcloud:
-    organization: "shaynetwok"
+    organization: "Shaïnee"
 script:
   # JaCoCo is used to have code coverage, the agent has to be activated
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.projectKey=shaynetwok-java-350-ex
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.projectKey=shaynetwok-ipi-java-350-ex
