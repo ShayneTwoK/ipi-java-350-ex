@@ -1,22 +1,31 @@
 package com.ipiecoles.java.java350.repository;
 
-import com.ipiecoles.java.java350.model.Employe;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDate;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
 class EmployeRepositoryTest {
 
-    @Test
-    void should_retourner_derniere_matricule_employe() {
-        //Given
-        Employe employer1 = new Employe("Khaldi", "Shaïnee", "Z1997", LocalDate.now(), 2000d, 1, 1.0);
-        //When
-        string lastMatricule = employeRepositoy.findLastMatricule();
-        //Then
-        assertThat();
+    @Autowired
+    private EmployeRepository employeRepository;
+
+    @BeforeEach
+    public void setup(){
+        employeRepository.deleteAll();
     }
 
+    @Test
+    public void should_retourner_derniere_matricule_employe(){
+        //Given
+
+        //When
+        String lastMatricule = employeRepository.findLastMatricule();
+
+        //Then
+        assertNull(lastMatricule);
+    }
 }
