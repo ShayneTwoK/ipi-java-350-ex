@@ -4,8 +4,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.NullSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.time.LocalDate;
 
@@ -144,6 +142,8 @@ class EmployeTest extends Assertions {
     public void should_augmenter_salaire_avec_un_pourcentage_null() {
         //Given
         Employe employe = new Employe("Doe", "John", "M00001", LocalDate.now(), 1000d, 1, 1.5);
+        // Je ne pensais pas mettre null mais "0" au depart,
+        // en testant ces deux possibilités cela m'a donner deux cas de tests
         employe.augmenterSalaire(null);
 
         //When

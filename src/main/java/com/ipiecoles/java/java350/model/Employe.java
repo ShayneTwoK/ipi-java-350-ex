@@ -1,5 +1,8 @@
 package com.ipiecoles.java.java350.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +14,8 @@ import java.util.Objects;
 @Entity
 public class Employe {
 
+    //slf4j
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -125,10 +130,10 @@ public class Employe {
             try {
                 this.salaire = this.getSalaire() * (1 + pourcentage);
             } catch (NullPointerException e) {
-                System.out.print("NullPointerException augmenterSalaire");
+                logger.error("NullPointerException augmenterSalaire");
             }
         } else {
-            System.out.print("augmenterSalaire vaut 0");
+            logger.error("augmenterSalaire vaut 0");
         }
     }
 
