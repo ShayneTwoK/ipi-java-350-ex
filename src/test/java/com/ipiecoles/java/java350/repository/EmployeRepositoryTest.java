@@ -64,6 +64,6 @@ class EmployeRepositoryTest {
         Double moyenne = employeRepository.avgPerformanceWhereMatriculeStartsWith("C");
 
         //Then
-        assertEquals(moyenne,43);
+        assertEquals(moyenne,35.5);
     }
 }
