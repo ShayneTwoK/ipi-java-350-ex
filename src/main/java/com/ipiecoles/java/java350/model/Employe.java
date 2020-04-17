@@ -1,8 +1,5 @@
 package com.ipiecoles.java.java350.model;
 
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,10 +10,6 @@ import java.util.Objects;
 
 @Entity
 public class Employe {
-
-    //slf4j
-    // le logger me lance "Application Context failed could not find the type of logger in column employe"
-//    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -131,10 +124,10 @@ public class Employe {
             try {
                 this.salaire = this.getSalaire() * (1 + pourcentage);
             } catch (NullPointerException e) {
-//                logger.error("NullPointerException augmenterSalaire");
+
             }
         } else {
-//            logger.error("augmenterSalaire vaut 0");
+
         }
     }
 
