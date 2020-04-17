@@ -124,10 +124,8 @@ public class Employe {
             try {
                 this.salaire = this.getSalaire() * (1 + pourcentage);
             } catch (NullPointerException e) {
-
+                System.out.print("Caught the NullPointerException");
             }
-        } else {
-
         }
     }
 
